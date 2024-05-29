@@ -10,6 +10,5 @@ export function getlast() {
 export function taskNext() {
     let combination = 'But sometimes let .';
     combination += getlast();
-
     return combination;
 }
