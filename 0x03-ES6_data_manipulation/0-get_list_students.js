@@ -1,8 +1,8 @@
 export default function getlistStudents() {
     const students = [
-        {name: 'Guillaume', id: 1, location: 'San Fransisco'},
-        {name: 'James', id: 2, location: 'Colombiaa'},
-        {name: 'Serena', id: 5, location: 'San Fransisco'}
+        {firstname: 'Guillaume', id: 1, location: 'San Fransisco'},
+        {firstname: 'James', id: 2, location: 'Colombiaa'},
+        {firstname: 'Serena', id: 5, location: 'San Fransisco'}
     ]
 
 //const retarray = students.map(newlist => {
@@ -13,5 +13,5 @@ export default function getlistStudents() {
 //    }]
 //})
 
-    return retarray;
+    return students;
 }
