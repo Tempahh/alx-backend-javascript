@@ -1,10 +1,4 @@
-#!/usr/bin/node
-
-function getResponseFromAPI() {
-  return new Promise(() => {
-    // Our API call or asynchronous operation goes here
-    // Once the operation is completed, we resolve or reject the promise accordingly
-  });
+/* eslint-disable */
+export default function getResponseFromAPI() {
+  return (new Promise((resolve, reject) => {}));
 }
-
-export default getResponseFromAPI;

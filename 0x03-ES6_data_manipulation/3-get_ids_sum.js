@@ -1,6 +1,8 @@
-export default function getStudentIdsSum(studarr) {
-    const initval = 0
-    return studarr instanceof Array ? 
-    studarr.reduce((total, currentvalue) => 
-        total + currentvalue.id, initval) : initval;
-}
+const getStudentIdsSum = (students) => {
+  const id = students.reduce(
+    (acc, value) => acc + value.id, 0,
+  );
+  return id;
+};
+
+export default getStudentIdsSum;

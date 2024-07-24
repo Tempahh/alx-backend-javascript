@@ -1,194 +1,90 @@
-# Project: 0x01. ES6 Promises
+Toggle navigation
+Curriculum
+Short Specializations
+Average: 200.0%
+0x01. ES6 Promises
+JavaScript
+ES6
+ Weight: 1
+ Project will start Apr 23, 2024 6:00 AM, must end by Apr 25, 2024 6:00 AM
+ Checker was released at Apr 23, 2024 6:00 PM
+ An auto review will be launched at the deadline
 
-![ES6-Promises](./main_files/es6-promises.jpeg)
 
-## Resources
+Resources
+Read or watch:
 
-### Read or watch:-
+Promise
+JavaScript Promise: An introduction
+Await
+Async
+Throw / Try
+Learning Objectives
+At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-- [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-- [JavaScript Promise: An introduction](https://web.dev/articles/promises)
-- [Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
-- [Async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
-- [Throw / Try](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)
+Promises (how, why, and what)
+How to use the then, resolve, catch methods
+How to use every method of the Promise object
+Throw / Try
+The await operator
+How to use an async function
+Requirements
+All your files will be executed on Ubuntu 18.04 LTS using NodeJS 12.11.x
+Allowed editors: vi, vim, emacs, Visual Studio Code
+All your files should end with a new line
+A README.md file, at the root of the folder of the project, is mandatory
+Your code should use the js extension
+Your code will be tested using Jest and the command npm run test
+Your code will be verified against lint using ESLint
+All of your functions must be exported
+Setup
+Install NodeJS 12.11.x
+(in your home directory):
 
-## Project Setup
-
-## Install NodeJS 12.11.x
-
-```bash
 curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt install nodejs -y
-```
+$ nodejs -v
+v12.11.1
+$ npm -v
+6.11.3
+Install Jest, Babel, and ESLint
+in your project directory, install Jest, Babel and ESList by using the supplied package.json and run npm install.
 
-### Verify NodeJS and npm versions:-
-
-```bash
-nodejs -v
-npm -v
-```
-
-## Install Jest, Babel, and ESLint
-
-Run the following command in your project directory to install `Jest`, `Babel`, and `ESLint`:
-
-```bash
-npm install
-```
-
-## Configuration Files
-
+Configuration Files
 Add the files below to your project directory
 
-### `package.json`
+package.json
+Click to show/hide file contents
+babel.config.js
+Click to show/hide file contents
+utils.js
+Use when you get to tasks requiring uploadPhoto and createUser.
 
-<details>
-<summary>Click to show/hide file contents</summary>
+Click to show/hide file contents
+.eslintrc.js
+Click to show/hide file contents
+and…
+Don’t forget to run $ npm install when you have the package.json
 
-```bash
+Response Data Format
+uploadPhoto returns a response with the format
+
 {
-  "scripts": {
-    "lint": "./node_modules/.bin/eslint",
-    "check-lint": "lint [0-9]*.js",
-    "dev": "npx babel-node",
-    "test": "jest",
-    "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/node": "^7.8.0",
-    "@babel/preset-env": "^7.6.0",
-    "eslint": "^6.4.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.17.0",
-    "jest": "^24.9.0"
-  }
+  status: 200,
+  body: 'photo-profile-1',
 }
-```
+createUser returns a response with the format
 
-</details>
-
-### `babel.config.js`
-
-<details>
-<summary>Click to show/hide file contents</summary>
-
-```bash
-module.exports = {
-  presets: [
-    [
-      '@babel/preset-env',
-      {
-        targets: {
-          node: 'current',
-        },
-      },
-    ],
-  ],
-};
-```
-
-</details>
-
-### `utils.js`
-
-<details>
-<summary>Click to show/hide file contents</summary>
-
-```bash
-export function uploadPhoto() {
-  return Promise.resolve({
-    status: 200,
-    body: 'photo-profile-1',
-  });
-}
-
-export function createUser() {
-  return Promise.resolve({
-    firstName: 'Guillaume',
-    lastName: 'Salva',
-  });
-}
-```
-
-</details>
-
-### `.eslintrc.js`
-
-<details>
-<summary>Click to show/hide file contents</summary>
-
-```bash
-module.exports = {
-  env: {
-    browser: false,
-    es6: true,
-    jest: true,
-  },
-  extends: [
-    'airbnb-base',
-    'plugin:jest/all',
-  ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-  },
-  plugins: ['jest'],
-  rules: {
-    'no-console': 'off',
-    'no-shadow': 'off',
-    'no-restricted-syntax': [
-      'error',
-      'LabeledStatement',
-      'WithStatement',
-    ],
-  },
-  overrides:[
-    {
-      files: ['*.js'],
-      excludedFiles: 'babel.config.js',
-    }
-  ]
-};
-```
-
-</details>
-
-- Don't forget to run npm install to install the dependencies specified in package.json.
-
-## Response Data Format
-
-`uploadPhoto` returns a response with the format:
-
-```json
 {
-  "status": 200,
-  "body": "photo-profile-1"
+  firstName: 'Guillaume',
+  lastName: 'Salva',
 }
-```
-
-`createUser` returns a response with the format
-
-```json
-{
-  "firstName": "Guillaume",
-  "lastName": "Salva"
-}
-```
-
-## Tasks
-
-0. [Keep every promise you make and only make promises you can keep](./0-promise.js) :
-
+Tasks
+0. Keep every promise you make and only make promises you can keep
+mandatory
 Return a Promise using this prototype function getResponseFromAPI()
 
-```bash
 bob@dylan:~$ cat 0-main.js
 import getResponseFromAPI from "./0-promise.js";
 
@@ -199,28 +95,27 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 0-main.js 
 true
 bob@dylan:~$ 
-```
+Repo:
 
-1. [Don't make a promise...if you know you can't keep it](./1-promise.js) :
-
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 0-promise.js
+  
+1. Don't make a promise...if you know you can't keep it
+mandatory
 Using the prototype below, return a promise. The parameter is a boolean.
 
-```bash
 getFullResponseFromAPI(success)
-```
+When the argument is:
 
-- When the argument is:
-  - true
-    - resolve the promise by passing an object with 2 attributes:
-      - `status`: `200`
-      - `body`: `'Success'`
-
-  - false
-    - reject the promise with an error object with the message `The fake API is not working currently`
-
+true
+resolve the promise by passing an object with 2 attributes:
+status: 200
+body: 'Success'
+false
+reject the promise with an error object with the message The fake API is not working currently
 Try testing it out for yourself
 
-```bash
 bob@dylan:~$ cat 1-main.js
 import getFullResponseFromAPI from './1-promise';
 
@@ -235,26 +130,24 @@ Promise {
     ...
     ...
 bob@dylan:~$ 
-```
+Repo:
 
-2. [Catch me if you can!](./2-then.js) :
-
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 1-promise.js
+  
+2. Catch me if you can!
+mandatory
 Using the function prototype below
 
-```bash
 function handleResponseFromAPI(promise)
-```
-
 Append three handlers to the function:
 
-- When the Promise resolves, return an object with the following attributes
-  - `status`: `200`
-  - `body`: `success`
-
-- When the Promise rejects, return an empty `Error` object
-- For every resolution, log `Got a response from the API` to the console
-
-```bash
+When the Promise resolves, return an object with the following attributes
+status: 200
+body: success
+When the Promise rejects, return an empty Error object
+For every resolution, log Got a response from the API to the console
 bob@dylan:~$ cat 2-main.js
 import handleResponseFromAPI from "./2-then";
 
@@ -265,21 +158,21 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 2-main.js 
 Got a response from the API
 bob@dylan:~$ 
-```
+Repo:
 
-3. [Handle multiple successful promises](./3-all.js) :
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 2-then.js
+  
+3. Handle multiple successful promises
+mandatory
+In this file, import uploadPhoto and createUser from utils.js
 
-In this file, import `uploadPhoto` and `createUser` from `utils.js`
+Knowing that the functions in utils.js return promises, use the prototype below to collectively resolve all promises and log body firstName lastName to the console.
 
-Knowing that the functions in `utils.js` return promises, use the prototype below to collectively resolve all promises and log `body firstName lastName` to the console.
-
-```bash
 function handleProfileSignup()
-```
+In the event of an error, log Signup system offline to the console
 
-In the event of an error, log `Signup system offline` to the console
-
-```bash
 bob@dylan:~$ cat 3-main.js
 import handleProfileSignup from "./3-all";
 
@@ -289,27 +182,24 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 3-main.js 
 photo-profile-1 Guillaume Salva
 bob@dylan:~$ 
-```
+Repo:
 
-4. [Simple promise](./4-user-promise.js) :
-
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 3-all.js
+  
+4. Simple promise
+mandatory
 Using the following prototype
 
-```bash
 function signUpUser(firstName, lastName) {
 }
-```
-
 That returns a resolved promise with this object:
 
-```bash
 {
   firstName: value,
   lastName: value,
 }
-```
-
-```bash
 bob@dylan:~$ cat 4-main.js
 import signUpUser from "./4-user-promise";
 
@@ -319,21 +209,21 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 4-main.js 
 Promise { { firstName: 'Bob', lastName: 'Dylan' } }
 bob@dylan:~$ 
-```
+Repo:
 
-5. [Reject the promises](./5-photo-reject.js) :
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 4-user-promise.js
+  
+5. Reject the promises
+mandatory
+Write and export a function named uploadPhoto. It should accept one argument fileName (string).
 
-Write and export a function named `uploadPhoto`. It should accept one argument `fileName` (string).
+The function should return a Promise rejecting with an Error and the string $fileName cannot be processed
 
-The function should return a Promise rejecting with an Error and the string `$fileName cannot be processed`
-
-```bash
 export default function uploadPhoto(filename) {
 
 }
-```
-
-```bash
 bob@dylan:~$ cat 5-main.js
 import uploadPhoto from './5-photo-reject';
 
@@ -346,15 +236,18 @@ Promise {
   ..
     ..
 bob@dylan:~$ 
-```
+Repo:
 
-6. [Handle multiple promises](./6-final-user.js) :
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 5-photo-reject.js
+  
+6. Handle multiple promises
+mandatory
+Import signUpUser from 4-user-promise.js and uploadPhoto from 5-photo-reject.js.
 
-Import `signUpUser` from `4-user-promise.js` and `uploadPhoto` from `5-photo-reject.js`.
+Write and export a function named handleProfileSignup. It should accept three arguments firstName (string), lastName (string), and fileName (string). The function should call the two other functions. When the promises are all settled it should return an array with the following structure:
 
-Write and export a function named `handleProfileSignup`. It should accept three arguments `firstName` (string), `lastName` (string), and `fileName` (string). The function should call the two other functions. When the promises are all settled it should return an array with the following structure:
-
-```bash
 [
     {
       status: status_of_the_promise,
@@ -362,9 +255,6 @@ Write and export a function named `handleProfileSignup`. It should accept three 
     },
     ...
   ]
-```
-
-```bash
 bob@dylan:~$ cat 6-main.js
 import handleProfileSignup from './6-final-user';
 
@@ -374,21 +264,21 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 6-main.js 
 Promise { <pending> }
 bob@dylan:~$ 
-```
+Repo:
 
-7. [Load balancer](./7-load_balancer.js) :
-
-Write and export a function named `loadBalancer`. It should accept two arguments `chinaDownload` (Promise) and `USDownload` (Promise).
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 6-final-user.js
+  
+7. Load balancer
+mandatory
+Write and export a function named loadBalancer. It should accept two arguments chinaDownload (Promise) and USDownload (Promise).
 
 The function should return the value returned by the promise that resolved the first.
 
-```bash
 export default function loadBalancer(chinaDownload, USDownload) {
 
 }
-```
-
-```bash
 bob@dylan:~$ cat 7-main.js
 import loadBalancer from "./7-load_balancer";
 
@@ -419,21 +309,21 @@ bob@dylan:~$ npm run dev 7-main.js
 Downloading from UK is faster
 Downloading from FR is faster
 bob@dylan:~$ 
-```
+Repo:
 
-8. [Throw error / try catch](./8-try.js) :
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 7-load_balancer.js
+  
+8. Throw error / try catch
+mandatory
+Write a function named divideFunction that will accept two arguments: numerator (Number) and denominator (Number).
 
-Write a function named `divideFunction` that will accept two arguments: `numerator` (Number) and `denominator` (Number).
+When the denominator argument is equal to 0, the function should throw a new error with the message cannot divide by 0. Otherwise it should return the numerator divided by the denominator.
 
-When the `denominator` argument is equal to 0, the function should throw a new error with the message `cannot divide by 0`. Otherwise it should return the numerator divided by the denominator.
-
-```bash
 export default function divideFunction(numerator, denominator) {
 
 }
-```
-
-```bash
 bob@dylan:~$ cat 8-main.js
 import divideFunction from './8-try';
 
@@ -449,26 +339,26 @@ bob@dylan:~$ npm run dev 8-main.js
 .....
 
 bob@dylan:~$ 
-```
+Repo:
 
-9. [Throw an error](./9-try.js) :
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 8-try.js
+  
+9. Throw an error
+mandatory
+Write a function named guardrail that will accept one argument mathFunction (Function).
 
-Write a function named `guardrail` that will accept one argument `mathFunction` (Function).
+This function should create and return an array named queue.
 
-This function should create and return an array named `queue`.
-
-When the `mathFunction` function is executed, the value returned by the function should be appended to the queue. If this function throws an error, the error message should be appended to the queue. In every case, the message `Guardrail was processed` should be added to the queue.
+When the mathFunction function is executed, the value returned by the function should be appended to the queue. If this function throws an error, the error message should be appended to the queue. In every case, the message Guardrail was processed should be added to the queue.
 
 Example:
 
-```bash
 [
   1000,
   'Guardrail was processed',
 ]
-```
-
-```bash
 bob@dylan:~$ cat 9-main.js
 import guardrail from './9-try';
 import divideFunction from './8-try';
@@ -481,61 +371,11 @@ bob@dylan:~$ npm run dev 9-main.js
 [ 5, 'Guardrail was processed' ]
 [ 'Error: cannot divide by 0', 'Guardrail was processed' ]
 bob@dylan:~$ 
-```
+Repo:
 
-10. [Await / Async](100-await.js) : 
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 9-try.js
+  
+Copyright © 2024 ALX, All rights reserved.
 
-Import `uploadPhoto` and `createUser` from `utils.js`
-
-Write an async function named `asyncUploadUser` that will call these two functions and return an object with the following format:
-
-```bash
-{
-  photo: response_from_uploadPhoto_function,
-  user: response_from_createUser_function,
-}
-```
-
-If one of the async function fails, return an empty object. Example:
-
-```bash
-{
-  photo: null,
-  user: null,
-}
-```
-
-```bash
-bob@dylan:~$ cat 100-main.js
-import asyncUploadUser from "./100-await";
-
-const test = async () => {
-    const value = await asyncUploadUser();
-    console.log(value);
-};
-
-test();
-
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 100-main.js 
-{
-  photo: { status: 200, body: 'photo-profile-1' },
-  user: { firstName: 'Guillaume', lastName: 'Salva' }
-}
-bob@dylan:~$ 
-```
-
----
-
-### Environment
-
-- Language: JavaScript
-  - Node Version: 12.11.1
-  - OS: Ubuntu 20.04 LTS
-  - Style guidelines:
-    - [Javascript Semistandard](https://github.com/standard/semistandard) `sudo npm install semistandard --global`
-    - [Eslint Standard](https://eslint.org/) `npx eslint nameoffile.js`
-  - [Install Semistandard - Note](../0x12-javascript-warm_up/README.md)
-    - [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript)
-
----

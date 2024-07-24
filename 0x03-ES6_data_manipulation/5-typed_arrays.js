@@ -1,12 +1,9 @@
 export default function createInt8TypedArray(length, position, value) {
-    if (typeof position !== 'number' || typeof length !==  'number' || typeof value !== 'number'){
-        throw Error('Arg type err!')
-    }
-    let arr = new Int8Array(length)
-    for (let i = 0; i < length; i++){
-        arr[i] = i
-    }
-    arr[position] = value;
-
-    return arr
+  if (position < 0 || position >= length) {
+    throw Error('Position outside range');
+  }
+  const newBuffer = new ArrayBuffer(length);
+  const int8 = new Int8Array(newBuffer, 0, length);
+  int8.set([value], position);
+  return new DataView(newBuffer);
 }
